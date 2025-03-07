@@ -1,0 +1,62 @@
+openapi: "3.0.0"
+info:
+  title: dotnet5angulaar
+  version: 1.0.0
+paths:
+  /:
+    get:
+      summary: Home endpoint
+      description: Returns a welcome message from the Home endpoint
+      tags:
+        - home
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Welcome to the Home endpoint!"
+
+  /counter:
+    get:
+      summary: Get counter value
+      description: Retrieves the current counter value
+      tags:
+        - counter
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  counter:
+                    type: integer
+                    example: 10
+  /fetch-data:
+    get:
+      summary: Fetch data
+      description: Fetches data from the server
+      tags:
+        - fetchdata
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      example: 1
+                    value:
+                      type: string
+                      example: "Sample Data"
