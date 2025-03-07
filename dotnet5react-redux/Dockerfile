@@ -17,6 +17,7 @@ RUN dotnet publish -c release --no-restore
 FROM mcr.microsoft.com/dotnet/aspnet:5.0
 ENV DOTNET_GENERATE_ASPNET_CERTIFICATE=false
 WORKDIR /app
+USER 10014
 EXPOSE 5001
 EXPOSE 5000
 ENV ASPNETCORE_URLS http://*:5001;http://*:5000
