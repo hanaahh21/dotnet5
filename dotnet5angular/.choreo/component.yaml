@@ -1,0 +1,27 @@
+schemaVersion: 1.1
+endpoints:
+  - name: home
+    displayName: Home
+    service:
+      basePath: /
+      port: 5000
+    type: REST
+    networkVisibilities:
+      - Public
+  - name: counter
+    displayName: Counter
+    service:
+      basePath: /counter
+      port: 5000
+    type: REST
+    networkVisibilities:
+      - Public
+  - name: fetchdata
+    displayName: FetchData
+    service:
+      basePath: /fetch-data
+      port: 5000
+    type: REST
+    networkVisibilities:
+      - Public
+    
