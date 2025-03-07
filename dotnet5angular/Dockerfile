@@ -1,5 +1,5 @@
 # Build Stage
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS dotnet5angular-dotnetcorebuildstage
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS dotnet5angular-dotnetcorebuildstage
 RUN apt-get update -y && apt-get install -y xz-utils && \
     wget https://nodejs.org/dist/v16.17.1/node-v16.17.1-linux-x64.tar.xz && \
     tar -xJf node-v16.17.1-linux-x64.tar.xz && \
@@ -13,7 +13,7 @@ RUN dotnet restore
 RUN dotnet publish -c release --no-restore
 
 # Run Stage
-FROM mcr.microsoft.com/dotnet/aspnet:8.0
+FROM mcr.microsoft.com/dotnet/aspnet:5.0
 ENV DOTNET_GENERATE_ASPNET_CERTIFICATE=false
 WORKDIR /app
 USER 10014
