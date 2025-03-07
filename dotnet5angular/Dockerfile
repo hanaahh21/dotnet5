@@ -1,10 +1,10 @@
 # Build Stage
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS dotnet5angular-dotnetcorebuildstage
 RUN apt-get update -y && apt-get install -y xz-utils && \
-    wget https://nodejs.org/dist/v18.18.2/node-v18.18.2-linux-x64.tar.xz && \
-    tar -xJf node-v18.18.2-linux-x64.tar.xz && \
-    mv node-v18.18.2-linux-x64 /node && \
-    rm -f node-v18.18.2-linux-x64.tar.xz
+    wget https://nodejs.org/dist/v16.17.1/node-v16.17.1-linux-x64.tar.xz && \
+    tar -xJf node-v16.17.1-linux-x64.tar.xz && \
+    mv node-v16.17.1-linux-x64 /node && \
+    rm -f node-v16.17.1-linux-x64.tar.xz
 ENV PATH="$PATH:/node/bin"
 
 WORKDIR /src
