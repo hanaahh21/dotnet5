@@ -1,5 +1,5 @@
 # Build Stage
-FROM mcr.microsoft.com/dotnet/sdk:5.0 AS dotnet5angular-dotnetcorebuildstage
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS dotnet5angular-dotnetcorebuildstage
 RUN apt-get update -y && apt-get install -y xz-utils && \
     wget https://nodejs.org/dist/v16.17.1/node-v16.17.1-linux-x64.tar.xz && \
     tar -xJf node-v16.17.1-linux-x64.tar.xz && \
